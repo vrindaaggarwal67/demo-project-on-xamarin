@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProjectApplication.Views.LoginPage"
+             Title="Login Page"
+             BackgroundColor="Maroon">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="flooop.png" Grid.Row="0" Grid.Column="0"/>
+                <Frame CornerRadius="20" BackgroundColor="White" Grid.Row="1" Grid.Column="0" Margin="10" Padding="20">
+                    <StackLayout Spacing="10">
+                        <Label Text="Hello" FontSize="Large" TextColor="Black"/>
+                        <Label Text="Login to get access" FontSize="Medium" TextColor="Gray"/>
+                        <Entry Placeholder="Email" Keyboard="Email" Text="{Binding Email}"/>
+                        <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True"/>
+                        <Button Text="Sign In" CornerRadius="20" BackgroundColor="Maroon" TextColor="White" HorizontalOptions="Start" Clicked="Login_Clicked"/>
+                        
+                    </StackLayout>
+                </Frame>
+            </Grid>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

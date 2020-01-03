@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ProjectApplication.Views.HomePage"
+             xmlns:vm="clr-namespace:ProjectApplication.ViewModels"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             BackgroundColor="Maroon"
+             >
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+        <Grid HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" BackgroundColor="Transparent">
+            <controls:CarouselViewControl  Orientation="Horizontal" InterPageSpacing="-3" Position="{Binding Position}" ItemsSource="{Binding CrousalImageList}"   IndicatorsShape="Circle" ShowIndicators="true
+                                           " VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <controls:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,0,20,0">
+                            <Image  Source="{Binding ImageUrl}" VerticalOptions="CenterAndExpand" Aspect="AspectFit" HorizontalOptions="CenterAndExpand">
+
+                            </Image>
+                        </StackLayout>
+                        
+
+                    </DataTemplate>
+                </controls:CarouselViewControl.ItemTemplate>
+            </controls:CarouselViewControl>
+
+        </Grid>
+        <Button Text="login" Font="16" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="End" VerticalOptions="End" Clicked="Button_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

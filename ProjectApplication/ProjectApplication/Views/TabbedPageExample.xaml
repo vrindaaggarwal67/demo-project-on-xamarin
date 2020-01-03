@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            
+            
+             x:Class="ProjectApplication.Views.TabbedPageExample"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+	         xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             
+             Title="Flooop"
+            
+             BackgroundColor="Transparent"
+             BarBackgroundColor="Maroon"
+             BarTextColor="White"
+             HeightRequest="60" 
+             >
+
+    <ContentPage Title="Chats">
+        <ContentPage.ToolbarItems>
+
+            <ToolbarItem Text ="Settings"  
+              Priority="0" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+                
+                <ListView SeparatorVisibility="None" Margin="0.5,0.5,1,0.5" ItemsSource="{Binding statusItems}" RowHeight="150" HasUnevenRows="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" ItemTapped="ListView_ItemTapped">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                           
+                                <ViewCell>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="70"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <ffimageloading:CachedImage HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center" HeightRequest="60" WidthRequest="60" DownsampleToViewSize="true"
+                                                       Grid.Row="0"  Grid.Column="0" Source = "{Binding img}" Margin="5,0,5,0">
+                                            <ffimageloading:CachedImage.Transformations>
+
+                                                <fftransformations:CircleTransformation />
+                                            </ffimageloading:CachedImage.Transformations>
+                                        </ffimageloading:CachedImage>
+                                        <Grid Grid.Row="0" Grid.Column="1" Margin="0,5,0,5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="0.5"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Text="{Binding Name}" TextColor="Black" FontSize="18" Grid.Column="0" Grid.Row="0" VerticalOptions="End">
+
+                                            </Label>
+
+                                            <Label Text="{Binding content}" LineBreakMode="TailTruncation" Grid.Column="0" Grid.Row="1" TextColor="LightGray" FontSize="16" VerticalOptions="Start">
+
+                                            </Label>
+                                            <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Column="0" Grid.Row="2">
+
+                                            </BoxView>
+
+                                        </Grid>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </StackLayout>
+
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Status">
+        <ContentPage.ToolbarItems>
+
+            <ToolbarItem Text ="Settings"  
+              Priority="0" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Text="Viewed Updates" TextColor="Black" BackgroundColor="LightGray" Padding="5,3,5,0" FontSize="Small"/>
+                <ListView SeparatorVisibility="None" Margin="0.5,0,1,0.5" ItemsSource="{Binding statusItems}" RowHeight="150" HasUnevenRows="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" ItemTapped="Status_ItemTapped">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                           
+                            <ViewCell>
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ffimageloading:CachedImage HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center" HeightRequest="60" WidthRequest="60" DownsampleToViewSize="true"
+                                                       Grid.Row="0"  Grid.Column="0" Source = "{Binding img}" Margin="5,0,5,0">
+                                        <ffimageloading:CachedImage.Transformations>
+
+                                            <fftransformations:CircleTransformation />
+                                        </ffimageloading:CachedImage.Transformations>
+                                    </ffimageloading:CachedImage>
+                                    <Grid Grid.Row="0" Grid.Column="1" Margin="0,5,0,5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="0.5"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Name}" TextColor="Black" FontSize="18" Grid.Column="0" Grid.Row="0" VerticalOptions="End">
+
+                                        </Label>
+                                        <Label Text="{Binding Time}" TextColor="LightGray" FontSize="16" Grid.Column="0" Grid.Row="1" VerticalOptions="Start">
+                                            
+                                        </Label>
+                                        
+                                        <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Column="0" Grid.Row="2">
+
+                                        </BoxView>
+
+                                    </Grid>
+                                </Grid>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+        </ContentPage.Content>
+    </ContentPage>
+    <ContentPage Title="Calls">
+        <ContentPage.ToolbarItems>
+
+            <ToolbarItem Text ="Settings"  
+              Priority="0" Order="Secondary" Clicked="ToolbarItem_Clicked" />
+        </ContentPage.ToolbarItems>
+        <ContentPage.Content>
+            
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+
+                <ListView SeparatorVisibility="None" Margin="0.5,0.5,1,0.5" ItemsSource="{Binding statusItems}" RowHeight="150" HasUnevenRows="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" ItemTapped="Call_Clicked">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            
+                            <ViewCell>
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ffimageloading:CachedImage HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center" HeightRequest="60" WidthRequest="60" DownsampleToViewSize="true"
+                                                       Grid.Row="0"  Grid.Column="0" Source = "{Binding img}" Margin="5,0,5,0">
+                                        <ffimageloading:CachedImage.Transformations>
+
+                                            <fftransformations:CircleTransformation />
+                                        </ffimageloading:CachedImage.Transformations>
+                                    </ffimageloading:CachedImage>
+                                    <Grid Grid.Row="0" Grid.Column="1" Margin="0,5,0,5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="0.5"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Name}" TextColor="Black" FontSize="18" Grid.Column="0" Grid.Row="0" VerticalOptions="End">
+
+                                        </Label>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1" >
+                                            <Image Source="IncomingCall1.png" Aspect="AspectFit" HeightRequest="20" WidthRequest="20"></Image>
+                                            <Label Text="{Binding Time}" LineBreakMode="TailTruncation" TextColor="LightGray" FontSize="16" VerticalOptions="Start">
+
+                                            </Label>
+                                        </StackLayout>
+                                        <!--<Button ImageSource="send.jfif" Clicked="Call_Clicked" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1"/>-->
+                                        <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2">
+
+                                        </BoxView>
+
+                                    </Grid>
+                                    <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                        <ImageButton Source="call.png" Padding="7" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="Call_Clicked" />
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+        </ContentPage.Content>
+    </ContentPage>
+
+</TabbedPage>

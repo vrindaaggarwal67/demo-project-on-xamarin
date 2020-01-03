@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             mc:Ignorable="d"
+             x:Class="ProjectApplication.Views.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*">
+                        
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <ffimageloading:CachedImage HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center" HeightRequest="80" WidthRequest="80" DownsampleToViewSize="true"
+                                                        Source = "id.jfif" Margin="5,0,5,0">
+                        <ffimageloading:CachedImage.Transformations>
+
+                            <fftransformations:CircleTransformation />
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="Vrinda" FontSize="Large" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Margin="20,10,0,0"></Label>
+                        <Label Text="Busy" FontSize="Small" TextColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="20,0,0,0"></Label>
+
+                    </StackLayout>
+                </StackLayout>
+                <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+
+                </BoxView>
+
+                <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+
+                    <ListView ItemsSource="{Binding settingItems}" SeparatorVisibility="None" Margin="0.5,0.5,1,0.5" RowHeight="150" HasUnevenRows="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White" >
+                            <ListView.ItemTemplate>
+
+                                <DataTemplate>
+
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="70"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ffimageloading:CachedImage HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center" HeightRequest="40" WidthRequest="40" DownsampleToViewSize="true"
+                                                       Grid.Row="0"  Grid.Column="0" Source = "{Binding SettingImage}" Margin="5,0,5,0">
+                                                    <ffimageloading:CachedImage.Transformations>
+
+                                                        <fftransformations:CircleTransformation />
+                                                    </ffimageloading:CachedImage.Transformations>
+                                                </ffimageloading:CachedImage>
+                                                <Grid Grid.Row="0" Grid.Column="1" Margin="0,5,0,5">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                        
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                <Label Text="{Binding SettingName}" TextColor="Black" FontSize="20" Grid.Column="0" Grid.Row="0" VerticalOptions="End">
+
+                                                    </Label>
+
+                                                <Label Text="{Binding SettingDescription}" LineBreakMode="TailTruncation" Grid.Column="0" Grid.Row="1" TextColor="LightGray" FontSize="16" VerticalOptions="Start">
+
+                                                    </Label>
+                                                    
+
+                                                </Grid>
+                                            </Grid>
+                                        </StackLayout>
+                                    </ViewCell>
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    
+
+                    </StackLayout>
+                <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+
+                </BoxView>
+                <StackLayout Grid.Row="4" Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <Label Text="From" TextColor="Gray" FontSize="Small" BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+                    <Label Text="Flooop" TextColor="Black"  FontSize="Medium"  BackgroundColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+        
+            
+
+        </ContentPage.Content>
+</ContentPage>

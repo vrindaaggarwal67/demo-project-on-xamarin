@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             mc:Ignorable="d"
+             x:Class="ProjectApplication.Views.CallDetailPage"
+             BackgroundColor="White"
+             Title="Call Logs">
+    <ContentPage.Content>
+
+
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*">
+
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="10,3,0,0">
+                    <ffimageloading:CachedImage x:Name="ProfileImage" HorizontalOptions="Center" Aspect="AspectFill" VerticalOptions="Center" HeightRequest="60" WidthRequest="60" DownsampleToViewSize="true"
+                                                        Margin="5,0,5,0">
+                        <ffimageloading:CachedImage.Transformations>
+
+                            <fftransformations:CircleTransformation />
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label x:Name="MyName" FontSize="Large" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Margin="20,10,0,0"></Label>
+                        <Label x:Name="Status" FontSize="Small" TextColor="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="20,0,0,0"></Label>
+
+                    </StackLayout>
+                    
+                </StackLayout>
+                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" BackgroundColor="LightGray" Grid.Row="0" Grid.Column="0"/>
+                <StackLayout Grid.Column="0" Grid.Row="1">
+                    <ListView ItemsSource="{Binding call}" HasUnevenRows="True" SeparatorVisibility="None">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+
+                                        <Frame CornerRadius="10" BackgroundColor="White" Margin="5" Padding="10" HasShadow="False">
+                                            <StackLayout Spacing="10" Padding="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                                <Image Source="IncomingCall1.png" HorizontalOptions="Start" VerticalOptions="FillAndExpand" HeightRequest="20" WidthRequest="20"/>
+                                                <Label Text ="{Binding .}"  FontSize="Medium" TextColor="Black" HorizontalOptions="StartAndExpand" Margin="0,0,0,0"></Label>
+                                                
+                                            </StackLayout>
+                                        </Frame>
+
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
