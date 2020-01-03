@@ -30,6 +30,7 @@ namespace ProjectApplication.Views
             it1.content = "Hey! Let's go out in the evening.";
             it1.img = "photo1.jfif";
             it1.Time = "Yesterday,10:30 pm";
+            it1.PhoneNumber = "6848915848";
             it1.chats = new List<string>();
             string msg1 = "Hey! Let's go out in the evening.";
             it1.chats.Add(msg1);
@@ -47,6 +48,7 @@ namespace ProjectApplication.Views
             it2.content = "Hey! Let's go out in the evening.";
             it2.img = "photo2.jpg";
             it2.Time = "Yesterday,1:30 pm";
+            it2.PhoneNumber = "6848915898";
             it2.chats = new List<string>();
             msg1 = "Hey! Let's go out in the evening.";
             it2.chats.Add(msg1);
@@ -64,6 +66,7 @@ namespace ProjectApplication.Views
             it3.content = "Hey! Let's go out in the evening.";
             it3.img = "photo3.jfif";
             it3.Time = "Yesterday,2:30 pm";
+            it3.PhoneNumber = "6048915848";
             it3.chats = new List<string>();
             msg1 = "Hey! Let's go out in the evening.";
             it3.chats.Add(msg1);
@@ -81,6 +84,7 @@ namespace ProjectApplication.Views
             it4.content = "Hey! Let's go out in the evening.";
             it4.img = "photo1.jfif";
             it4.Time = "Yesterday,10:03 pm";
+            it4.PhoneNumber = "6848910848";
             it4.chats = new List<string>();
             msg1 = "Hey! Let's go out in the evening.";
             it4.chats.Add(msg1);
@@ -98,6 +102,7 @@ namespace ProjectApplication.Views
             it5.content = "Hey! Let's go out in the evening.";
             it5.img = "photo2.jfif";
             it5.Time = "Yesterday,11:30 pm";
+            it5.PhoneNumber = "6848916748";
             it5.chats = new List<string>();
             msg1 = "Hey! Let's go out in the evening.";
             it5.chats.Add(msg1);
@@ -115,6 +120,7 @@ namespace ProjectApplication.Views
             it6.content = "Hey! Let's go out in the evening.";
             it6.img = "photo3.jfif";
             it6.Time = "Yesterday,3:30 pm";
+            it6.PhoneNumber = "6848565848";
             it6.chats = new List<string>();
             msg1 = "Hey! Let's go out in the evening.";
             it6.chats.Add(msg1);
@@ -132,6 +138,7 @@ namespace ProjectApplication.Views
             it7.content = "Hey! Let's go out in the evening.";
             it7.img = "photo1.jfif";
             it7.Time = "Yesterday,5:30 am";
+            it7.PhoneNumber = "6834915848";
             it7.chats = new List<string>();
             msg1 = "Hey! Let's go out in the evening.";
             it7.chats.Add(msg1);

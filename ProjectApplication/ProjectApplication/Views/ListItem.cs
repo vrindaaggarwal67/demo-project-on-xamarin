@@ -10,6 +10,7 @@ namespace ProjectApplication.Views
         public string img { get; set; }
         public string content { get; set; }
         public string Time { get; set; }
+        public string PhoneNumber { get; set; }
         public List<string> chats {get; set;}
         public List<string> calls { get; set; }
     }

@@ -204,7 +204,8 @@
 
                                     </Grid>
                                     <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                        <ImageButton Source="call.png" Padding="7" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="Call_Clicked" />
+                                    
+                                        <ImageButton Source="call.png" Padding="7" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Clicked="ImageButton_Clicked"/>
                                     </StackLayout>
                                 </Grid>
                             </ViewCell>

@@ -54,14 +54,31 @@ namespace ProjectApplication.Views
             Navigation.PushAsync(new SettingsPage());
         }
 
-        private void Call_Clicked(object sender, EventArgs e)
+        //private void MakeCall(object sender, ItemTappedEventArgs e)
+        //{
+        //    var item = e.Item as ListItem;
+        //    if (item == null)
+        //        return;
+        //    var phoneDial = CrossMessaging.Current.PhoneDialer;
+
+        //    if (phoneDial.CanMakePhoneCall)
+        //    {
+        //       phoneDial.MakePhoneCall(item.PhoneNumber, item.Name);
+        //    }
+        //}
+
+        
+
+        private void ImageButton_Clicked(object sender, EventArgs e)
         {
+            
             var phoneDial = CrossMessaging.Current.PhoneDialer;
 
             if (phoneDial.CanMakePhoneCall)
             {
-                phoneDial.MakePhoneCall("+91 9926631777", "Neelu Gupta");
-            }
+               phoneDial.MakePhoneCall("9826986262", "neelu gupta");
+          }
+
         }
     }
 }

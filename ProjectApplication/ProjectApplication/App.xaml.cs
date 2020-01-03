@@ -24,7 +24,7 @@ namespace ProjectApplication
                 DependencyService.Register<MockDataStore>();
             else
                 DependencyService.Register<AzureDataStore>();
-            MainPage = new NavigationPage(new TabbedPageExample()) 
+            MainPage = new NavigationPage(new HomePage()) 
             {
         BarBackgroundColor = Color.FromHex("#800000"),
         BarTextColor = Color.White,
